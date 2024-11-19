@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
   const [errorMessage ,seterrorMessage] = useState('')
  const navigate =useNavigate()
- const {createUser}=useContext(AuthContext)
+ const location = useLocation()
+ const {createUser , GoogleLogin}=useContext(AuthContext)
 // value hiseve authInfo ke pathiye ekhanee distructure kore niyechi
     const handeRegister =(e)=>{
         e.preventDefault();
@@ -15,10 +16,10 @@ const Register = () => {
         const password=(e.target.password.value)
         console.log(name,email,password)
 
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if(!passwordRegex.test(password))
         {
-          seterrorMessage('password should be 1 uppercase & 1 lowercase & 1 digit & One special character from @$!%*?& &  at least 8 digit')
+          seterrorMessage('password should be 1 uppercase & 1 lowercase & 1 digit & One special character from @$!%*?& &  at least 6 digit')
         }
 
 
@@ -34,6 +35,18 @@ const Register = () => {
         )
           
     } 
+
+    const handleGoogleLogin = () =>{
+      GoogleLogin()
+      .then(res=>{
+        navigate(location.state?.from || '/')
+      }) 
+      .catch((error) => {
+        console.error("Google Login Error:", error);
+      });
+    }
+
+
 
     return (
         <div>
@@ -64,7 +77,10 @@ const Register = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
         </div>
-     
+        <br />
+        <p className='text-black font-semibold text-center'>Or</p>
+        <br />
+        <button className='btn ' onClick={handleGoogleLogin}> Register with Google </button>
       </form>
       {
         errorMessage && <p className='text-red-500 px-6 py-3'>{errorMessage}</p>

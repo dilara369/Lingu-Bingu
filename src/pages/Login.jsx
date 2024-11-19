@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 
 const Login = () => {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser , GoogleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation()
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -22,6 +23,14 @@ const Login = () => {
 
       .catch((error) => console.log("Error", error.message));
   };
+
+  const handleGoogleLogin = () =>{
+    GoogleLogin()
+    .then(res=>{
+      navigate(location.state?.from || '/')
+    })  }
+
+
 
   return (
     <div>
@@ -58,8 +67,9 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control mt-6 space-y-3">
                 <button className="btn btn-primary">Login</button>
+                <button className="btn" onClick={handleGoogleLogin}>Login With Google</button>
               </div>
               <p className="text-blue-950">
                 Haven't Any account?{" "}
