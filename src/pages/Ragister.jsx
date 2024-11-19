@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 const Register = () => {
-
+const auth =  getAuth()
   const [errorMessage ,seterrorMessage] = useState('')
  const navigate =useNavigate()
  const location = useLocation()
@@ -14,7 +15,8 @@ const Register = () => {
         const name =e.target.Name.value
         const email= (e.target.email.value)
         const password=(e.target.password.value)
-        console.log(name,email,password)
+        const photo =e.target.photo.value
+        console.log(name,email,password,photo)
 
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if(!passwordRegex.test(password))
@@ -23,18 +25,19 @@ const Register = () => {
         }
 
 
-        createUser(email,password)
-        .then((result)=> { console.log(result.user)
-         navigate('/');
-        })
-        .catch (error =>  {
-        //  seterrorMessage(error.message)
-          
-        }
-        
-        )
+        createUser(email, password, name, photo)
+      .then(() => {
+        navigate("/");  
+      })
+      .catch((error) => {
+        setError(error.message);  
+      });
           
     } 
+
+
+
+
 
     const handleGoogleLogin = () =>{
       GoogleLogin()
@@ -46,6 +49,9 @@ const Register = () => {
       });
     }
 
+    
+
+    
 
 
     return (
@@ -61,6 +67,16 @@ const Register = () => {
           </label>
           <input type="Name" name='Name' placeholder="Name" className="input input-bordered" required />
         </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text"> Photo</span>
+          </label>
+          <input type="photo" name='photo' placeholder="photo URL" className="input input-bordered" required />
+        </div>
+
+       
+        
+
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
-
+import logo from "../assets/logo.png"
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
   console.log(user);
@@ -66,7 +66,10 @@ const Navbar = () => {
               </NavLink>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className="w-[100px] h-[100px] ">
+            <img className="rounded-full" src={logo} alt="" />
+          </div>
+      
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className=" gap-5 items-center menu menu-horizontal px-1">
@@ -108,8 +111,16 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div>
-                <span>{user.email}</span>
+              <div className="flex ">
+                {user ? (
+                  <img
+                    src={user.photo}
+                    alt="User Photo"
+                    className="w-16 h-16 rounded-full"
+                  />
+                ) : (
+                  <span>No photo available</span>
+                )}
                 <a onClick={handleLogout} className="btn">
                   Sign Out
                 </a>

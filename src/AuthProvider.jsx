@@ -6,20 +6,27 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 import auth from "./pages/Firebase.init";
-
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUse] = useState(null);
   const [loading, setLoading] = useState(true);
-  const googleProvider = new GoogleAuthProvider() 
-  const createUser = (email, password) => {
+  const googleProvider = new GoogleAuthProvider();
+  const createUser = (email, password, name, photo) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+       
+        updateProfileInfo(name, photo);
+      })
+      .catch((error) => {
+        console.error("Error creating user: ", error); 
+      });
   };
 
   const loginUser = (email, password) => {
@@ -32,11 +39,21 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const GoogleLogin = () =>{
+  const GoogleLogin = () => {
     setLoading(true);
-    return signInWithPopup(auth,googleProvider)
-   }
+    return signInWithPopup(auth, googleProvider);
+  };
 
+  const updateProfileInfo = (displayName, photoURL) => {
+    const auth = getAuth();
+    updateProfile(auth.currentUser, { displayName, photoURL })
+      .then(() => {
+        setUse(auth.currentUser); // Update the user state after profile update 
+      })
+      .catch((error) => {
+        console.error("Error ", error); 
+      });
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (curretnUser) => {
@@ -54,7 +71,7 @@ const AuthProvider = ({ children }) => {
     user,
     logOutUser,
     loading,
-    GoogleLogin
+    GoogleLogin,
   };
 
   return (
