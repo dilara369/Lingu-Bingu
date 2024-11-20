@@ -12,6 +12,11 @@ import Login from './pages/Login';
 import Ragister from './pages/Ragister';
 import AuthProvider from './AuthProvider';
 import Home from './pages/Home';
+import StartLearning from './pages/StartLearning';
+import Lesson from './component/Lesson';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import NotFound from './component/NotFound';
+import Tutorials from './pages/Tutorials';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +36,33 @@ const router = createBrowserRouter([
         path:'/ragister',
         element:<Ragister/>,
       },
+      {
+        path:'/StartLearning',
+        element:<StartLearning/>,
+      },
+      {
+        path:'/Tutorials',
+        element:<Tutorials/>,
+      },
+      {
+        path:'/Lesson/:Lesson_no',
+        element: <PrivateRoute><Lesson/></PrivateRoute> ,
+        loader:async({params})=>{
+          const res =await fetch("/vocabulary.json")
+          const data = await res.json()
+          console.log(data)
+          const singleData =data.find(newData=>newData.Lesson_no==params.Lesson_no )
+          return singleData;
+        }
+      },
 
+
+      {
+        path:'/404',
+        element:<NotFound/>
+         
+        
+      },
       
     ] 
   },

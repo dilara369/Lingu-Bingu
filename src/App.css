@@ -57,3 +57,72 @@
     background-color: #fff;
   }
   
+  /* for start learning page  */
+ 
+  
+  .card {
+    position: relative;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .card#lesson-1 {
+    background-image: url('https://via.placeholder.com/500x300/FF5733/FFFFFF?text=Animated+Background+1');
+  }
+  
+  .card#lesson-2 {
+    background-image: url('https://via.placeholder.com/500x300/33FF57/FFFFFF?text=Animated+Background+2');
+  }
+  
+  .card#lesson-3 {
+    background-image: url('https://via.placeholder.com/500x300/5733FF/FFFFFF?text=Animated+Background+3');
+  }
+  
+  .card#lesson-4 {
+    background-image: url('https://via.placeholder.com/500x300/FF33A6/FFFFFF?text=Animated+Background+4');
+  }
+  
+  .card#lesson-5 {
+    background-image: url('https://via.placeholder.com/500x300/33A6FF/FFFFFF?text=Animated+Background+5');
+  }
+  
+  .card#lesson-6 {
+    background-image: url('https://via.placeholder.com/500x300/FF5733/FFFFFF?text=Animated+Background+6');
+  }
+  
+  .card#lesson-7 {
+    background-image: url('https://via.placeholder.com/500x300/5733FF/FFFFFF?text=Animated+Background+7');
+  }
+  
+  .card#lesson-8 {
+    background-image: url('https://via.placeholder.com/500x300/33FF57/FFFFFF?text=Animated+Background+8');
+  }
+  
+  .card#lesson-9 {
+    background-image: url('https://via.placeholder.com/500x300/33A6FF/FFFFFF?text=Animated+Background+9');
+  }
+  
+  .card#lesson-10 {
+    background-image: url('https://via.placeholder.com/500x300/FF33A6/FFFFFF?text=Animated+Background+10');
+  }
+  
