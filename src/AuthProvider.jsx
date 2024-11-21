@@ -46,15 +46,18 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateProfileInfo = (displayName, photoURL) => {
-    const auth = getAuth()
+    const auth = getAuth();
     updateProfile(auth.currentUser, { displayName, photoURL })
       .then(() => {
-        setUse(auth.currentUser); // Update the user state after profile update 
+        
+        const updatedUser = { ...auth.currentUser, displayName, photoURL };
+        setUse(updatedUser); 
       })
       .catch((error) => {
-        console.error("Error ", error); 
+        console.error("Error updating profile: ", error);
       });
   };
+  
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (curretnUser) => {
@@ -73,6 +76,7 @@ const AuthProvider = ({ children }) => {
     logOutUser,
     loading,
     GoogleLogin,
+    updateProfileInfo
   };
 
   return (

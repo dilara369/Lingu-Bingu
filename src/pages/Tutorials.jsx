@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Lesson from "../component/Lesson";
+
 
 const Tutorials = () => {
 
