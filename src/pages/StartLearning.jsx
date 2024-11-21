@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import "../App.css"
+import '../component/style.css'
 
 
 const StartLearning =()=> {
@@ -13,53 +13,53 @@ const StartLearning =()=> {
     <div>
  {/* to={`/Lesson/${Lesson_no}`} */}
 <div  class="grid lg:grid-cols-3 md:grid-cols-1 gap-10 p-5 ">
-  <div class="card" id="lesson-1">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-1">
+    <div class="learningcard-content">
       <h2>Lesson-1</h2>
     </div>
   </div>
-  <div class="card" id="lesson-2">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-2">
+    <div class="learningcard-content">
       <h2>Lesson-2</h2>
     </div>
   </div>
-  <div class="card" id="lesson-3">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-3">
+    <div class="learningcard-content">
       <h2>Lesson-3</h2>
     </div>
   </div>
-  <div class="card" id="lesson-4">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-4">
+    <div class="learningcard-content">
       <h2>Lesson-4</h2>
     </div>
   </div>
-  <div class="card" id="lesson-5">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-5">
+    <div class="learningcard-content">
       <h2>Lesson-5</h2>
     </div>
   </div>
-  <div class="card" id="lesson-6">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-6">
+    <div class="learningcard-content">
       <h2>Lesson-6</h2>
     </div>
   </div>
-  <div class="card" id="lesson-7">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-7">
+    <div class="learningcard-content">
       <h2>Lesson-7</h2>
     </div>
   </div>
-  <div class="card" id="lesson-8">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-8">
+    <div class="learningcard-content">
       <h2>Lesson-8</h2>
     </div>
   </div>
-  <div class="card" id="lesson-9">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-9">
+    <div class="learningcard-content">
       <h2>Lesson-9</h2>
     </div>
   </div>
-  <div class="card" id="lesson-10">
-    <div class="card-content">
+  <div class="learningcard" id="lesson-10">
+    <div class="learningcard-content">
       <h2>Lesson-10</h2>
     </div>
   </div>

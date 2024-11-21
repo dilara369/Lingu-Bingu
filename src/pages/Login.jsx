@@ -34,10 +34,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleLogin} className="card-body">
+      <div className="hero  min-h-screen">
+        <div className="hero-content flex-col  lg:flex-row-reverse">
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-5">
+            
+
+           
+            <form onSubmit={handleLogin} >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -67,18 +70,22 @@ const Login = () => {
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6 space-y-3">
+              <div className="form-control mt-6 space-y-3 ">
                 <button className="btn btn-primary">Login</button>
-                <button className="btn" onClick={handleGoogleLogin}>Login With Google</button>
+                
               </div>
-              <p className="text-blue-950">
+              
+            </form>
+          
+         <button className="btn mt-2" onClick={handleGoogleLogin}>Login With Google</button>
+            <p className="text-blue-950">
                 Haven't Any account?{" "}
                 <NavLink className="font-bold" to="/ragister">
                   Register Now
                 </NavLink>
               </p>
-            </form>
-          </div>
+        
+        </div>
         </div>
       </div>
     </div>

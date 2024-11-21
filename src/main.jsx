@@ -51,7 +51,8 @@ const router = createBrowserRouter([
           const res =await fetch("/vocabulary.json")
           const data = await res.json()
           console.log(data)
-          const singleData =data.find(newData=>newData.Lesson_no==params.Lesson_no )
+          const singleData =data.find(newData=>newData.Lesson_no == params.Lesson_no )
+          console.log(singleData)
           return singleData;
         }
       },

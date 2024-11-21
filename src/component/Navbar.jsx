@@ -113,9 +113,10 @@ const Navbar = () => {
             <>
               <div className="flex ">
                 {user ? (
+                  
                   <img
-                    src={user.photo}
-                    alt="User Photo"
+                    src={user.photoURL}
+                    // alt="User Photo"
                     className="w-16 h-16 rounded-full"
                   />
                 ) : (

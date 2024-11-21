@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Lesson from "../component/Lesson";
 
 const Tutorials = () => {
 
@@ -44,6 +45,8 @@ const Tutorials = () => {
         >
            Learn Vocabularies
         </button> 
+
+        <Lesson/>
     </div>
   );
 };
