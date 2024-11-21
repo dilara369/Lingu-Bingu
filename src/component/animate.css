@@ -1,0 +1,20 @@
+
+.my-element {
+  display: inline-block;
+  margin: 1rem;
+  opacity: 0; 
+  transform: translateX(100%); 
+  animation: slideInFromRight 2s ease-out forwards;
+  background-color: rgba(2, 82, 56, 0.57);
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}

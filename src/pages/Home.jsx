@@ -1,7 +1,8 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import CountUp from "react-countup";
 import BannerSlider from "../component/BannerSlider";
+import  "../component/animate.css";
 
  const Home = () => {
 
@@ -55,7 +56,7 @@ import BannerSlider from "../component/BannerSlider";
       </section>
 
       {/* Extra Section 1: Feature Highlights */}
-      <section className="bg-white p-8">
+      <section className=" w-[80%] mx-auto p-8 my-element mt-5 mb-10 ">
         <h2 className="text-2xl font-semibold text-center">Features</h2>
         <div className="flex justify-center gap-8 mt-6">
           <div className="w-1/3 text-center">
@@ -74,7 +75,7 @@ import BannerSlider from "../component/BannerSlider";
       </section>
 
       {/* Extra Section 2: Testimonials */}
-      <section className="bg-blue-600 text-white py-8">
+      <section className=" w-[60%]  text-white py-8 mt-6 my-element ">
         <h2 className="text-2xl font-semibold text-center">What Our Users Say</h2>
         <div className="flex justify-center gap-8 mt-6">
           <div className="w-1/3 text-center">

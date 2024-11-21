@@ -122,7 +122,7 @@ const Navbar = () => {
                 ) : (
                   <span>No photo available</span>
                 )}
-                <a onClick={handleLogout} className="btn">
+                <a onClick={handleLogout} className="btn bg-lime-300 rounded-full">
                   Sign Out
                 </a>
               </div>
