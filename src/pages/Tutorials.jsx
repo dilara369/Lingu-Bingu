@@ -46,7 +46,7 @@ const Tutorials = () => {
            Learn Vocabularies
         </button> 
 
-        <Lesson/>
+       
     </div>
   );
 };
