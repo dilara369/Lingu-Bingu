@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 
+
 const Login = () => {
-  const { loginUser , GoogleLogin } = useContext(AuthContext);
+  const { loginUser , GoogleLogin,resetPass } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
+  const emailRef=useRef(null);
+  const passRef=useRef(null);
+  const [passwordError, setPasswordError] = useState('');
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -17,8 +21,8 @@ const Login = () => {
         console.log(result.user);
         e.target.reset();
         // e.target.reset() its for clean
-        navigate("/home");
-        // you have to create a home component and make sure the path
+        navigate("/");
+      
       })
 
       .catch((error) => console.log("Error", error.message));
@@ -30,7 +34,33 @@ const Login = () => {
       navigate(location.state?.from || '/')
     })  }
 
-
+    const handleForgetpass = () => {
+      const email = emailRef.current.value;
+  
+      if (!email) {
+        alert("Please enter an email");
+        return;
+      }
+      resetPass(email);
+      handlePasswordValidation();
+    };
+  
+    // Password Validation for login
+    const handlePasswordValidation = () => {
+      const password = passRef.current.value;
+  
+     
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  
+      if (!passwordRegex.test(password)) {
+        setPasswordError(
+          "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
+        );
+      } else {
+        setPasswordError(""); // Clear error message if valid
+      }
+    };
+    
 
   return (
     <div>
@@ -49,6 +79,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="email"
+                  ref={emailRef}
                   className="input input-bordered"
                   required
                 />
@@ -61,10 +92,11 @@ const Login = () => {
                   type=""
                   name="password"
                   placeholder="password"
+                  ref={passRef}
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
+                <label onClick={handleForgetpass} className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
                   </a>

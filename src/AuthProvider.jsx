@@ -4,6 +4,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -45,6 +46,19 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  const resetPass = (email) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert('Password reset email sent, please check');
+      })
+      .catch((error) => {
+        alert('Error sending email: ' + error.message);
+      });
+  };
+
+
+
+
   const updateProfileInfo = (displayName, photoURL) => {
     const auth = getAuth();
     updateProfile(auth.currentUser, { displayName, photoURL })
@@ -57,6 +71,8 @@ const AuthProvider = ({ children }) => {
         console.error("Error updating profile: ", error);
       });
   };
+  
+
   
 
   useEffect(() => {
@@ -76,7 +92,8 @@ const AuthProvider = ({ children }) => {
     logOutUser,
     loading,
     GoogleLogin,
-    updateProfileInfo
+    updateProfileInfo,
+    resetPass
   };
 
   return (

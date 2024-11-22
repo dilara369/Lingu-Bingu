@@ -16,24 +16,28 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photo = e.target.photo.value;
-    console.log(name, email, password, photo);
-
+  
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-    if (!passwordRegex.test(password)) {
+  
+    // Clear error message if password is valid
+    if (passwordRegex.test(password)) {
+      seterrorMessage("");  // Clear the error message
+      createUser(email, password, name, photo)
+        .then(() => {
+          navigate("/login");
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    } else {
+      // If password is invalid, show error message
       seterrorMessage(
-        "password should be 1 uppercase & 1 lowercase & 1 digit & One special character from @$!%*?& &  at least 6 digit"
+        "Password should be 1 uppercase, 1 lowercase, 1 digit, 1 special character (@$!%*?&) and at least 6 characters."
       );
     }
-
-    createUser(email, password, name, photo)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
   };
+  
 
   const handleGoogleLogin = () => {
     GoogleLogin()
@@ -106,6 +110,8 @@ const Register = () => {
                   placeholder="password"
                   className="input input-bordered"
                   required
+                  // autoComplete="off"
+                  autoComplete="new-password"
                 />
               </div>
               <div className="form-control mt-6">
