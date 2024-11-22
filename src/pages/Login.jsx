@@ -25,7 +25,9 @@ const Login = () => {
       
       })
 
-      .catch((error) => console.log("Error", error.message));
+      .catch((error) => {console.log("Error", error.message)
+       alert('Didnot login successfully');
+      })
   };
 
   const handleGoogleLogin = () =>{

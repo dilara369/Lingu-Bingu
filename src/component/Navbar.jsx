@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
   console.log(user);
@@ -69,31 +69,38 @@ const Navbar = () => {
           <div className="w-[100px] h-[100px] ">
             <img className="rounded-full" src={logo} alt="" />
           </div>
-      
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className=" gap-5 items-center menu menu-horizontal px-1">
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
             >
               Home
             </NavLink>
             <NavLink
               to="/StartLearning"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
             >
               Start-Learning
             </NavLink>
             <NavLink
               to="/Tutorials"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
             >
               Tutorials
             </NavLink>
             <NavLink
               to="/AboutUs"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
             >
               About-Us
             </NavLink>
@@ -113,7 +120,6 @@ const Navbar = () => {
             <>
               <div className="flex ">
                 {user ? (
-                  
                   <img
                     src={user.photoURL}
                     // alt="User Photo"
@@ -122,7 +128,10 @@ const Navbar = () => {
                 ) : (
                   <span>No photo available</span>
                 )}
-                <a onClick={handleLogout} className="btn bg-lime-300 rounded-full">
+                <a
+                  onClick={handleLogout}
+                  className="btn bg-lime-300 rounded-full"
+                >
                   Sign Out
                 </a>
               </div>

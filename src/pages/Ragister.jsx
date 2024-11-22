@@ -25,10 +25,11 @@ const Register = () => {
       seterrorMessage("");  // Clear the error message
       createUser(email, password, name, photo)
         .then(() => {
-          navigate("/login");
+          navigate("/");
         })
         .catch((error) => {
           setError(error.message);
+          alert(setError);
         });
     } else {
       // If password is invalid, show error message
