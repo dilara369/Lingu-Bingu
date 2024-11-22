@@ -4,8 +4,16 @@
   margin: 1rem;
   opacity: 0; 
   transform: translateX(100%); 
-  animation: slideInFromRight 2s ease-out forwards;
-  background-color: rgba(2, 82, 56, 0.57);
+  animation: slideInFromRight 5s ease-out forwards;
+  background-color: rgb(201, 219, 244);
+}
+.my-element-other {
+  display: inline-block;
+  margin: 1rem;
+  opacity: 0; 
+  transform: translateX(-100%); 
+  animation: slideInFromLeft 5s ease-out forwards;
+  background-color:  rgb(201, 219, 244);
 }
 
 @keyframes slideInFromRight {
@@ -16,5 +24,15 @@
   100% {
     opacity: 1;
     transform: translateX(0); 
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-0); 
   }
 }
