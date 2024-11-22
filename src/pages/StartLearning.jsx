@@ -1,14 +1,23 @@
 
 import {  useNavigate } from "react-router-dom";
 import '../component/style.css'
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider";
 
 
 const StartLearning =()=> {
+  const {user} =useContext(AuthContext)
   const navigate =useNavigate()
+  
   const handleBackToLogin = () => {
-    navigate('/login');    
-
+    if(user)
+      navigate('/Tutorials');
+    else{
+    alert("Your are not logged in!")
+    navigate('/login');
+    }
 };
+
 const handleCardClick = (Lesson_no) => {
   navigate(`/Lesson/${Lesson_no}`);
 };

@@ -20,10 +20,12 @@ const Lesson = () => {
           Hard
         </p>
       </div>
+      
       {/* card section  */}
       <div>
         {singleData.map((Lesson) => (
           <LessonCard key={Lesson.Lesson_no} Lesson={Lesson} />
+          
         ))}
       </div>
     </div>

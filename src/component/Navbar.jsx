@@ -97,7 +97,7 @@ const Navbar = () => {
               Tutorials
             </NavLink>
             <NavLink
-              to="/AboutUs"
+              to="/About_us"
               className={({ isActive }) =>
                 ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
               }

@@ -16,6 +16,7 @@ import NotFound from "./component/NotFound";
 import Tutorials from "./pages/Tutorials";
 import MyProfile from "./pages/MyProfile";
 import UpdateProfile from "./component/UpdateProfile";
+import AboutUs from "./pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -73,8 +74,13 @@ const router = createBrowserRouter([
         },
       },
 
+
       {
-        path: "/404",
+        path: "/About_us",
+        element: <AboutUs/>,
+      },
+      {
+        path: "*",
         element: <NotFound />,
       },
     ],
