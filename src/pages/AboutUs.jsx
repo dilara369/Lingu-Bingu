@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className="bg-gray-100 py-12">
+        <div className=" py-12">
           <div className="container mx-auto px-6 lg:px-12">
             {/* Header */}
             <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">

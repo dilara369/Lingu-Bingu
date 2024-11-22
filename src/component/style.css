@@ -64,7 +64,7 @@
     position: relative;
     height: 250px;
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 6px 6px 15px rgba(84, 219, 234, 0.5);
+    box-shadow: 6px 6px 15px rgb(241, 185, 194);
 
     border-radius: 8px;
     overflow: hidden;
@@ -88,71 +88,71 @@
   }
   
   .learningcard#lesson-1 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+1');
-    background-repeat: no-repeat;
+    background-image: url('https://i.ibb.co.com/KDYgJBM/bfc7371d-941b-4872-b863-846fb9872ef2.jpg');
+    /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: center;
     
   }
   
   .learningcard#lesson-2 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+2');
+    background-image: url('https://i.ibb.co.com/X5BkKsC/23c199bd-fe09-49d9-a6c1-cb247551890f.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-3 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+3');
+    background-image: url('https://i.ibb.co.com/r3cZx8k/69594300-7bb2-4981-9910-10a4663139c6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-4 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+4');
+    background-image: url('https://i.ibb.co.com/PYFTXCz/281034a1-6144-4f16-8bcb-8d799060f89a.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-5 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+5');
+    background-image: url('https://i.ibb.co.com/Xtss0MT/d2e96e59-548d-4aa2-93f1-2556556d0beb.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-6 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+6');
+    background-image: url('https://i.ibb.co.com/fYD9D1k/80ffc58d-2e6f-4537-9d04-11d846de8242.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-7 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+7');
+    background-image: url('https://i.ibb.co.com/4pdsJsG/58b6bc01-787c-4155-950d-fd8c745cb791.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-8 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+8');
+    background-image: url('https://i.ibb.co.com/dK89mwx/47da9089-4bd9-4d41-86f8-e7fa5d1b3ca0.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-9 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+9');
+    background-image: url('https://i.ibb.co.com/dKpVbw4/2ce2360f-7434-4fa2-9204-a4f90a09dbef.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   
   .learningcard#lesson-10 {
-    background-image: url('https://i.ibb.co.com/x2Vqx10/Screenshot-2024-11-21-203305.png?text=Animated+Background+10');
+    background-image: url('https://i.ibb.co.com/rF3RHwB/d8bf26d5-bfb9-4ea4-83b0-3a70e2603e43.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

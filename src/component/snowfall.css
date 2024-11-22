@@ -1,0 +1,32 @@
+.snowfall-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Ensure it doesn’t block interactions */
+  z-index: 1; /* Ensure it's above other content */
+}
+
+.snowflake {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* Keyframes for snowfall effect */
+@keyframes fall {
+  0% {
+    top: -10px; /* Start above the screen */
+  }
+  100% {
+    top: 100vh; /* End at the bottom of the screen */
+  }
+}
+
+
+  .bg-custom-gradient {
+    background: linear-gradient(to bottom, rgba(102, 164, 245, 0.5), rgba(209, 247, 245, 0.5));
+  }

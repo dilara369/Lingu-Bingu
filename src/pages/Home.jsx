@@ -14,7 +14,7 @@ const Home = () => {
         <BannerSlider />
 
         {/* About Section */}
-        <section className="p-8 bg-white text-center">
+        <section className="p-8  text-center">
           <h2 className="text-2xl font-semibold">About Us</h2>
           <p className="text-lg mt-4">
             Welcome to our Turkish Language Learning website! Our mission is to
